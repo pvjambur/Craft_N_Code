@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canteen Food Selection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f5;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f0; /* Light green background */
             margin: 0;
             padding: 20px;
             color: #333;
         }
         h1 {
             text-align: center;
-            color: #0056b3;
+            color: #2c7d2c; /* Green theme */
             margin-bottom: 20px;
         }
         select, button {
@@ -28,12 +30,13 @@
             max-width: 300px;
         }
         button {
-            background-color: #0056b3;
+            background-color: #28a745; /* Green button */
             color: white;
+            border: none;
             cursor: pointer;
         }
         button:hover {
-            background-color: #004494;
+            background-color: #218838; /* Darker green on hover */
         }
         .food-details {
             display: none;
@@ -62,6 +65,16 @@
             object-fit: cover;
             border-radius: 10px;
         }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c7d2c;
+            color: white;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -85,6 +98,10 @@
         <p><strong>Status:</strong> <span id="foodStatus"></span></p>
         <img id="foodImage" class="food-image" src="" alt="Food Image" />
     </div>
+
+    <footer>
+        <p>&copy; 2024 Canteen Monitoring System</p>
+    </footer>
 
     <script>
         // Example food items array with images (this could come from your API in real usage)

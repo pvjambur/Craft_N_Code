@@ -28,7 +28,8 @@
                     <h2>Welcome to Our Innovation in Food Safety</h2>
                     <p>Our system ensures the highest standards of food safety by monitoring kitchen operations, detecting anomalies, and auditing transactions.</p>
                     <button id="loginButton">Login to Your Account</button>
-                    <button id="cctvButton">CCTV Tracking</button> <!-- New CCTV Tracking Button -->
+                    <button id="cctvButton">CCTV Tracking</button>
+                    <button id="studentButton">Food Selection Page</button> <!-- New button for student.html -->
                 </div>
 
                 <!-- Slideshow Container -->
@@ -65,14 +66,21 @@
 
             showSlides();
 
-            // Login button navigation
+            // Button navigations
             document.getElementById('loginButton').addEventListener('click', function () {
                 window.location.href = "auth.html"; // Navigate to the login page
             });
 
-            // CCTV Tracking button navigation
             document.getElementById('cctvButton').addEventListener('click', function () {
                 window.location.href = "cctv_tracking.html"; // Navigate to CCTV tracking page
+            });
+
+            // New student button navigation
+            document.getElementById('studentButton').addEventListener('click', function () {
+                window.location.href = "student.html"; // Navigate to student.html page
+            });
+            document.getElementById('Block-chain').addEventListener('click', function () {
+                window.location.href = "blockchain.html"; // Navigate to CCTV Blockchain page
             });
         </script>
     </div>
