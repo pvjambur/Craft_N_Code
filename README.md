@@ -1,4 +1,4 @@
-### **Canteen 360° Monitoring System: Efficient Utilization of AI, Blockchain, YOLO, and Real-Time Data**
+# **Canteen 360° Monitoring System: Efficient Utilization of AI, Blockchain, YOLO, and Real-Time Data**
 
 ---
 
