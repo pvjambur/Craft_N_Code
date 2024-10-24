@@ -3,46 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCTV Tracking - Food Safety</title>
+    <title>CCTV Human Detection</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .cctv-section {
+            margin-top: 20px;
+        }
+
+        .cctv-section h2 {
+            text-align: center;
+            font-size: 1.8em;
+            color: #4CAF50;
+        }
+
+        video {
+            width: 640px;
+            height: 360px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .alert-box {
+            width: 640px;
+            background-color: #ffcccc;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .safe-box {
+            width: 640px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>CCTV Tracking</h1>
-        <button onclick="window.history.back()">Back to Home</button>
-    </header>
 
-    <main id="root">
-        <!-- React components will be rendered here -->
-    </main>
+<header>
+    <h1>CCTV Human Detection</h1>
+</header>
 
-    <footer>
-        <p>&copy; 2024 Canteen Monitoring System</p>
-    </footer>
+<main>
 
-    <script>
-        // VideoPlayer component to play video1.mp4
-        const VideoPlayer = () => {
-            const videoSrc = './videos/video1.mp4'; // Adjust path as needed
+    <!-- CCTV Video 1 -->
+    <div class="cctv-section">
+        <h2>CCTV Camera 1</h2>
+        <div class="video-container">
+            <video id="video1" controls loop>
+                <source src="videos/video1.mp4" type="video/mp4">
+                <source src="videos/video1.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="alert-box" id="alert1">
+            <strong>Alert:</strong> Injured personnel detected!
+        </div>
+    </div>
 
-            return (
-                <div className="video-container">
-                    <video width="640" height="360" controls>
-                        <source src={videoSrc} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            );
-        };
+    <!-- CCTV Video 2 -->
+    <div class="cctv-section">
+        <h2>CCTV Camera 2</h2>
+        <div class="video-container">
+            <video id="video2" controls loop>
+                <source src="/videos/video2.mp4" type="video/mp4">
+                <source src="/videos/video2.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="safe-box" id="alert2">
+            <strong>Safe:</strong> No fire or kitchen problems detected.
+        </div>
+    </div>
 
-        // Rendering the VideoPlayer component
-        ReactDOM.render(
-            React.createElement(VideoPlayer),
-            document.getElementById('root')
-        );
-    </script>
+    <!-- CCTV Video 3 -->
+    <div class="cctv-section">
+        <h2>CCTV Camera 3</h2>
+        <div class="video-container">
+            <video id="video3" controls loop>
+                <source src="videos/video3.mp4" type="video/mp4">
+                <source src="videos/video3.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="alert-box" id="alert3">
+            <strong>Alert:</strong> Major fire risk detected!
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 CCTV Monitoring System</p>
+</footer>
+
 </body>
 </html>

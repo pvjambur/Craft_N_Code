@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canteen Food Selection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+        }
+        button {
+            background-color: #0056b3;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004494;
+        }
+        .food-details {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .food-details p {
+            margin: 10px 0;
+        }
+        .food-image-container {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            margin: 15px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .food-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Select Your Food Item</h1>
+
+    <label for="foodDropdown">Choose a food item:</label>
+    <select id="foodDropdown">
+        <option value="" disabled selected>Select an item</option>
+        <!-- Dynamically populated food options will go here -->
+    </select>
+
+    <button onclick="showFoodDetails()">Show Details</button>
+
+    <div id="foodInfo" class="food-details">
+        <h3>Food Item Details</h3>
+        <p><strong>Name:</strong> <span id="foodName"></span></p>
+        <p><strong>Stock:</strong> <span id="foodStock"></span></p>
+        <p><strong>Origin:</strong> <span id="foodOrigin"></span></p>
+        <p><strong>Freshness Score:</strong> <span id="foodFreshness"></span></p>
+        <p><strong>Status:</strong> <span id="foodStatus"></span></p>
+        <img id="foodImage" class="food-image" src="" alt="Food Image" />
+    </div>
+
+    <script>
+        // Example food items array with images (this could come from your API in real usage)
+        const foodItems = [
+            { id: 1, name: "Pasta", stock: 10, origin: "Farm A", freshness: "9/10", status: "Available", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs2paowiODEqEOJ082fLEWgrlBjvBlGd2GrQ&s" },
+            { id: 2, name: "Salad", stock: 5, origin: "Farm B", freshness: "8/10", status: "Low Stock", image: "https://www.refreshmyhealth.com/wp-content/uploads/2020/07/how-to-make-a-simple-salad-recipe-vegan-gluten-free-lunch_260-main_img_6804-lrcc.jpg" },
+            { id: 3, name: "Soup", stock: 8, origin: "Farm C", freshness: "10/10", status: "Available", image: "https://images.pexels.com/photos/262947/pexels-photo-262947.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { id: 4, name: "Fried Rice", stock: 12, origin: "Farm D", freshness: "9/10", status: "Available", image: "https://slurrp.club/wp-content/uploads/2022/04/DSC_0286-2-2-750x481.jpg" },
+            { id: 7, name: "Pizza", stock: 9, origin: "Farm G", freshness: "8.5/10", status: "Available", image: "https://images.pexels.com/photos/842519/pexels-photo-842519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+            { id: 8, name: "Burger", stock: 7, origin: "Farm H", freshness: "8/10", status: "Available", image: "https://www.shutterstock.com/image-photo/classic-hamburger-stock-photo-isolated-600nw-2282033179.jpg"},
+        ];
+
+        // Populate the dropdown with food items
+        const dropdown = document.getElementById('foodDropdown');
+        foodItems.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item.id;
+            option.textContent = item.name;
+            dropdown.appendChild(option);
+        });
+
+        // Show food details when an item is selected
+        function showFoodDetails() {
+            const selectedId = dropdown.value;
+            const foodItem = foodItems.find(item => item.id == selectedId);
+
+            if (foodItem) {
+                document.getElementById('foodName').textContent = foodItem.name;
+                document.getElementById('foodStock').textContent = foodItem.stock;
+                document.getElementById('foodOrigin').textContent = foodItem.origin;
+                document.getElementById('foodFreshness').textContent = foodItem.freshness;
+                document.getElementById('foodStatus').textContent = foodItem.status;
+                document.getElementById('foodImage').src = foodItem.image;
+                document.getElementById('foodImage').alt = foodItem.name + " Image";
+                document.getElementById('foodInfo').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
