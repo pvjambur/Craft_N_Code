@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCTV Tracking - Food Safety</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CCTV Tracking</h1>
+        <button onclick="window.history.back()">Back to Home</button>
+    </header>
+
+    <main id="root">
+        <!-- React components will be rendered here -->
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Canteen Monitoring System</p>
+    </footer>
+
+    <script>
+        // VideoPlayer component to play video1.mp4
+        const VideoPlayer = () => {
+            const videoSrc = './videos/video1.mp4'; // Adjust path as needed
+
+            return (
+                <div className="video-container">
+                    <video width="640" height="360" controls>
+                        <source src={videoSrc} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            );
+        };
+
+        // Rendering the VideoPlayer component
+        ReactDOM.render(
+            React.createElement(VideoPlayer),
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

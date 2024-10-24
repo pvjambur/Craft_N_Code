@@ -28,13 +28,18 @@
                     <h2>Welcome to Our Innovation in Food Safety</h2>
                     <p>Our system ensures the highest standards of food safety by monitoring kitchen operations, detecting anomalies, and auditing transactions.</p>
                     <button id="loginButton">Login to Your Account</button>
+                    <button id="cctvButton">CCTV Tracking</button> <!-- New CCTV Tracking Button -->
                 </div>
+
+                <!-- Slideshow Container -->
                 <div class="slider">
-                    <img src="./images/img1.jpg" alt="Food Safety Process" class="slide">
-                    <img src="./images/img2.jpg" alt="Kitchen Monitoring" class="slide">
-                    <img src="./images/img3.jpg" alt="Segregation Audit" class="slide">
-                    <img src="./images/img4.jpg" alt="Storage" class="slide">
-                    <img src="./images/img5.jpg" alt="Blockchain Audit" class="slide">
+                    <div class="slides">
+                        <img src="./images/img1.jpg" alt="Food Safety Process" class="slide">
+                        <img src="./images/img2.jpg" alt="Kitchen Monitoring" class="slide">
+                        <img src="./images/img3.jpg" alt="Segregation Audit" class="slide">
+                        <img src="./images/img4.jpg" alt="Storage" class="slide">
+                        <img src="./images/img5.jpg" alt="Blockchain Audit" class="slide">
+                    </div>
                 </div>
             </section>
         </main>
@@ -59,6 +64,16 @@
             }
 
             showSlides();
+
+            // Login button navigation
+            document.getElementById('loginButton').addEventListener('click', function () {
+                window.location.href = "auth.html"; // Navigate to the login page
+            });
+
+            // CCTV Tracking button navigation
+            document.getElementById('cctvButton').addEventListener('click', function () {
+                window.location.href = "cctv_tracking.html"; // Navigate to CCTV tracking page
+            });
         </script>
     </div>
 </body>

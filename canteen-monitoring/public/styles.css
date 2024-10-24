@@ -157,3 +157,67 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Existing styles... */
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    margin: 5px; /* Add margin to separate buttons */
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Additional styles can go here */
+  
+  .video-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .warnings {
+    margin-top: 20px;
+  }
+  
+  .warnings ul {
+    list-style-type: none;
+  }
+  
+
+  .video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .video-player {
+    position: relative;
+  }
+  
+  .warnings {
+    margin-top: 20px;
+  }
+  
+  .warnings ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .warnings li {
+    padding: 5px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin: 5px 0;
+  }
+  
