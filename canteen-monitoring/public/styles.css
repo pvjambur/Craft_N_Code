@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+header {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 40px 0;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.content {
+    max-width: 50%;
+}
+
+.content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.slider {
+    max-width: 40%;
+    position: relative;
+    z-index: 2;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Food Background Animation */
+.animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.food-item {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: move 20s linear infinite;
+    opacity: 0.7;
+}
+
+.burger {
+    background-image: url('./images/burger.png'); /* You need to add food images in public/images */
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.pizza {
+    background-image: url('./images/pizza.png');
+    width: 120px;
+    height: 120px;
+    top: 30%;
+    left: 80%;
+    animation-delay: 3s;
+}
+
+.fries {
+    background-image: url('./images/fries.png');
+    width: 90px;
+    height: 90px;
+    top: 60%;
+    left: 40%;
+    animation-delay: 6s;
+}
+
+.hotdog {
+    background-image: url('./images/hotdog.png');
+    width: 100px;
+    height: 100px;
+    top: 75%;
+    left: 10%;
+    animation-delay: 9s;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(120vh);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
